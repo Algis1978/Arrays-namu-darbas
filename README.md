@@ -1,9 +1,9 @@
-# Arrays-namu-darbas
+# JS-arrays
 
 # Apie
 
 Namų darbas BIT Javascript mokymuose (pradžios data: 2021 m. birželio 21 d.);<br>
-Publikuota: [Namų darbas nr. 8: „Sign-korteles“]( https://algis1978.github.io/Arrays-namu-darbas
+Publikuota: [„JS-arrays“]( https://algis1978.github.io/JS-arrays
 /)
 
 # Mokymų detalės:
