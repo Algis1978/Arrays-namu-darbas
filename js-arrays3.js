@@ -136,13 +136,6 @@ function rastiMokiniSuAuksciausiuPazymiuVidurkiu (data) {
     return auksciausiasVidurkis    
 }
 
-// console.log (rastiZemiausiaPazymiuVidurki (data1));
-// function rastiMokiniSuZemiausiuPazymiuVidurkiu (data){
-//     document.write ("<br>4. Mokinys(-iai) su mažiausiu pažymių vidurkiu "+rastiZemiausiaPazymiuVidurki (data)+":");
-//     for (let i=0; i<data.length; i=i+1){
-
-//     }
-// }
 function rastiMokiniSuPazymiu8 (data) {
     document.write ("<br>6. Mokinys(-iai) su pažymiu 8:");
     for (let i=0; i<data.length; i=i+1){

@@ -27,8 +27,8 @@ function rastiZemiausiaPazymi (data) {
     let zemiausiasPazymys = 10;
     for (let i=0; i<data.length; i=i+1){
         for (let j=0; j<data[i].marks.length; j=j+1){
-            if (data1[i].marks[j]<zemiausiasPazymys) {
-            zemiausiasPazymys=data1[i].marks[j]
+            if (data[i].marks[j]<zemiausiasPazymys) {
+            zemiausiasPazymys=data[i].marks[j]
             }
         }
     }
@@ -50,8 +50,8 @@ function rastiAuksciausiaPazymi (data) {
     let auksciausiasPazymys = 1;
     for (let i=0; i<data.length; i=i+1){
         for (let j=0; j<data[i].marks.length; j=j+1){
-            if (data1[i].marks[j]>auksciausiasPazymys) {
-            auksciausiasPazymys=data1[i].marks[j]
+            if (data[i].marks[j]>auksciausiasPazymys) {
+            auksciausiasPazymys=data[i].marks[j]
             }
         }
     }
@@ -76,7 +76,7 @@ function rastiMokiniSuZemiausiuPazymiuVidurkiu (data) {
     for (let i=0; i<data.length; i=i+1){
         suma = 0; 
         for (let j=0; j<data[i].marks.length; j=j+1){
-            suma +=data1[i].marks[j];
+            suma +=data[i].marks[j];
         }   
         vidurkis = suma/data[i].marks.length;      
         if (vidurkis<zemiausiasVidurkis){
@@ -87,7 +87,7 @@ function rastiMokiniSuZemiausiuPazymiuVidurkiu (data) {
     for (let i=0; i<data.length; i=i+1){
         suma = 0; 
         for (let j=0; j<data[i].marks.length; j=j+1){
-            suma +=data1[i].marks[j];
+            suma +=data[i].marks[j];
         }
         vidurkis = suma/data[i].marks.length;   
         console.log (vidurkis);
@@ -104,7 +104,7 @@ function rastiMokiniSuAuksciausiuPazymiuVidurkiu (data) {
     for (let i=0; i<data.length; i=i+1){
         suma = 0; 
         for (let j=0; j<data[i].marks.length; j=j+1){
-            suma +=data1[i].marks[j];
+            suma +=data[i].marks[j];
         }   
         vidurkis = suma/data[i].marks.length;      
         if (vidurkis>auksciausiasVidurkis){
@@ -115,7 +115,7 @@ function rastiMokiniSuAuksciausiuPazymiuVidurkiu (data) {
     for (let i=0; i<data.length; i=i+1){
         suma = 0; 
         for (let j=0; j<data[i].marks.length; j=j+1){
-            suma +=data1[i].marks[j];
+            suma +=data[i].marks[j];
         }
         vidurkis = suma/data[i].marks.length;   
         console.log (vidurkis);
@@ -126,13 +126,6 @@ function rastiMokiniSuAuksciausiuPazymiuVidurkiu (data) {
     return auksciausiasVidurkis    
 }
 
-// console.log (rastiZemiausiaPazymiuVidurki (data1));
-// function rastiMokiniSuZemiausiuPazymiuVidurkiu (data){
-//     document.write ("<br>4. Mokinys(-iai) su mažiausiu pažymių vidurkiu "+rastiZemiausiaPazymiuVidurki (data)+":");
-//     for (let i=0; i<data.length; i=i+1){
-
-//     }
-// }
 function rastiMokiniSuPazymiu8 (data) {
     document.write ("<br>6. Mokinys(-iai) su pažymiu 8:");
     for (let i=0; i<data.length; i=i+1){
