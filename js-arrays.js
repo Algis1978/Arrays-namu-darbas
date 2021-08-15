@@ -90,7 +90,6 @@ function rastiMokiniSuZemiausiuPazymiuVidurkiu (data) {
             suma +=data[i].marks[j];
         }
         vidurkis = suma/data[i].marks.length;   
-        console.log (vidurkis);
         if (vidurkis===zemiausiasVidurkis) {
             document.write ("<br><em>"+data[i].name+" (vidurkis "+zemiausiasVidurkis.toFixed (2)+");</em>")
         }
@@ -118,7 +117,6 @@ function rastiMokiniSuAuksciausiuPazymiuVidurkiu (data) {
             suma +=data[i].marks[j];
         }
         vidurkis = suma/data[i].marks.length;   
-        console.log (vidurkis);
         if (vidurkis===auksciausiasVidurkis) {
             document.write ("<br><em>"+data[i].name+" (vidurkis "+auksciausiasVidurkis.toFixed (2)+");</em>")
         }
