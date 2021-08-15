@@ -5,31 +5,22 @@
 // Išspausdinti mokinio vardą, jei jis turi pažymį 8.
 // Išspausdinti mokinio vardą, jei jis neturi pažymio 7.
 // PASTABA: jei kazkurį reikalavimą atitinka daugiau nei vienas mokinys, spausdinti visus.
-document.write ("<h1>SAVARANKIŠKAS JAVASCRIPT DARBAS<h1><h2>UŽDUOTYS</h2><p>Pagal duotą duomenų masyvą:<br>1. Patikrinti, ar masyvo duomenys suvesti teisingai. Jei ne, nurodyti, kurie.<br>2. Išspausdinti mokinio, kuris turi prasčiausią pažymį, vardą ir pažymį.<br>2. Išspausdinti mokinio, kuris turi geriausią pažymį, vardą ir pažymį.<br>4. Išspausdinti mokinio, kuris turi prasčiausią pažymių vidurkį, vardą ir pažymių vidurkį.<br>5. Išspausdinti mokinio, kuris turi geriausią pažymių vidurkį, vardą ir pažymių vidurkį.<br>6. Išspausdinti mokinio vardą, jei jis turi pažymį 8.<br>8. Išspausdinti mokinio vardą, jei jis neturi pažymio 7.<br><br>PASTABA: jei kazkurį reikalavimą atitinka daugiau nei vienas mokinys, spausdinti visus.</p><h2>JAVASCRIPT PROGRAMOS REZULTATAS: </h2><h3>Duomenų masyvas I:</h3><p>const data = [<br>{name: 'Jonas', marks: [10, 2, 8, 4, 6]},<br>{name: 'Maryte', marks: [3, 7, 9, 5]},<br>{name: 'Petras', marks: [7, 7, 7]},<br>{name: 'Ona', marks: [10, 9, 8, 7, 6]}<br>]</p><h3>Rezultatai:</h3>");
-const data = [
-    {name: 'Jonas', marks: [10, 2, 8, 4, 6]},
-    {name: 'Maryte', marks: [3, 7, 9, 5]},
-    {name: 'Petras', marks: [7, 7, 7]},
-    {name: 'Ona', marks: [10, 9, 8, 7, 6]},
-]
-const data1  = [
-    {name: 'Tomas', marks: [10, "2a", 8, 4, 6]},
-    {name: 'Ieva', marks: [3, 7, 9, true]},
-    {name: 'Pranas', marks: [7, -7, 7]},
-    {name: 'Daiva', marks: [Infinity, 9, 8, , 6]},
-    {name: 'Aurelija', marks: [12, null, 8, 7, 6]},
-]
-const data2 = [
-    {name: 'Jonas', marks: [10, 10, 10]},
-    {name: 'Maryte', marks: [10, 10]},
-    {name: 'Petras', marks: [10, 10, 10]},
-]
-const data3 = [
-    {name: 'Jonas', marks: [5, 5, 5]},
-    {name: 'Maryte', marks: [9, 9, 8]},
-    {name: 'Petras', marks: [10, 10, 10]},
-]
+document.write ("<h3>Duomenų masyvas IV (bonus masyvas):</h3>const data = [<br>{name: 'Tomas', marks: [1, 1, 1, 1]},<br>{name: 'Ieva', marks: [1, 1, 1]}<br>{name: 'Pranas', marks: [10, 10, 10]},<br>{name: 'Daiva', marks: [10, 10, 10, 10]},<br>]</p><h3>Rezultatai:</h3>");
 
+
+// const data = [
+//     {name: 'Tomas', marks: [10, "2a", 8, 4, 6]},
+//     {name: 'Ieva', marks: [3, 7, 9, true]},
+//     {name: 'Pranas', marks: [7, -7, 7]},
+//     {name: 'Daiva', marks: [Infinity, 9, 8, , 6]},
+//     {name: 'Aurelija', marks: [12, null, 8, 7, 6]},
+// ]
+const data = [
+    {name: 'Tomas', marks: [1, 1, 1, 1]},
+    {name: 'Ieva', marks: [1, 1, 1]},
+    {name: 'Pranas', marks: [10, 10, 10]},
+    {name: 'Daiva', marks: [10, 10, 10, 10]},
+]
 function rastiNeteisingusDuomenis (data){
     document.write ("<br>1. Duomenys teisingi, jei žemiau nenurodyta kitaip.<br><small>(Pvz.:<i>Neteisingi duomenys: </i>Vardas, pažymys;<br>Ištaisykite neteisingus duomenis, kitaip sekančios funkcijos pateiks klaidingus duomenis arba jų nepateiks).</small>")
     for (let i=0; i<data.length; i=i+1){
@@ -44,8 +35,8 @@ function rastiZemiausiaPazymi (data) {
     let zemiausiasPazymys = 10;
     for (let i=0; i<data.length; i=i+1){
         for (let j=0; j<data[i].marks.length; j=j+1){
-            if (data1[i].marks[j]<zemiausiasPazymys) {
-            zemiausiasPazymys=data1[i].marks[j]
+            if (data[i].marks[j]<zemiausiasPazymys) {
+            zemiausiasPazymys=data[i].marks[j]
             }
         }
     }
@@ -67,8 +58,8 @@ function rastiAuksciausiaPazymi (data) {
     let auksciausiasPazymys = 1;
     for (let i=0; i<data.length; i=i+1){
         for (let j=0; j<data[i].marks.length; j=j+1){
-            if (data1[i].marks[j]>auksciausiasPazymys) {
-            auksciausiasPazymys=data1[i].marks[j]
+            if (data[i].marks[j]>auksciausiasPazymys) {
+            auksciausiasPazymys=data[i].marks[j]
             }
         }
     }
@@ -93,7 +84,7 @@ function rastiMokiniSuZemiausiuPazymiuVidurkiu (data) {
     for (let i=0; i<data.length; i=i+1){
         suma = 0; 
         for (let j=0; j<data[i].marks.length; j=j+1){
-            suma +=data1[i].marks[j];
+            suma +=data[i].marks[j];
         }   
         vidurkis = suma/data[i].marks.length;      
         if (vidurkis<zemiausiasVidurkis){
@@ -104,7 +95,7 @@ function rastiMokiniSuZemiausiuPazymiuVidurkiu (data) {
     for (let i=0; i<data.length; i=i+1){
         suma = 0; 
         for (let j=0; j<data[i].marks.length; j=j+1){
-            suma +=data1[i].marks[j];
+            suma +=data[i].marks[j];
         }
         vidurkis = suma/data[i].marks.length;   
         console.log (vidurkis);
@@ -121,7 +112,7 @@ function rastiMokiniSuAuksciausiuPazymiuVidurkiu (data) {
     for (let i=0; i<data.length; i=i+1){
         suma = 0; 
         for (let j=0; j<data[i].marks.length; j=j+1){
-            suma +=data1[i].marks[j];
+            suma +=data[i].marks[j];
         }   
         vidurkis = suma/data[i].marks.length;      
         if (vidurkis>auksciausiasVidurkis){
@@ -132,7 +123,7 @@ function rastiMokiniSuAuksciausiuPazymiuVidurkiu (data) {
     for (let i=0; i<data.length; i=i+1){
         suma = 0; 
         for (let j=0; j<data[i].marks.length; j=j+1){
-            suma +=data1[i].marks[j];
+            suma +=data[i].marks[j];
         }
         vidurkis = suma/data[i].marks.length;   
         console.log (vidurkis);
