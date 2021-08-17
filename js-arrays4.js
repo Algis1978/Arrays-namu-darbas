@@ -21,6 +21,12 @@ const data = [
     {name: 'Pranas', marks: [10, 10, 10]},
     {name: 'Daiva', marks: [10, 10, 10, 10]},
 ]
+// const data = [
+//     {name: 'Tomas', marks: [10, 10, 10, 10]},
+//     {name: 'Ieva', marks: [10, 10, 10]},
+//     {name: 'Pranas', marks: [10, 10, 10]},
+//     {name: 'Daiva', marks: [10, 10, 10, 10]},
+// ]
 function rastiNeteisingusDuomenis (data){
     document.write ("<br>1. Duomenys teisingi, jei žemiau nenurodyta kitaip.<br><small>(Pvz.:<i>Neteisingi duomenys: </i>Vardas, pažymys;<br>Ištaisykite neteisingus duomenis, kitaip sekančios funkcijos pateiks klaidingus duomenis arba jų nepateiks).</small>")
     for (let i=0; i<data.length; i=i+1){
@@ -45,14 +51,19 @@ function rastiZemiausiaPazymi (data) {
 
 function rastiMokiniSuZemiausiuPazymiu (data){
     document.write ("<br>2. Mokinys(-iai) su mažiausiu pažymiu "+rastiZemiausiaPazymi (data)+":");
-    for (let i=0; i<data.length; i=i+1){
-        for (let j=0; j<data[i].marks.length; j=j+1) {
-            if (data[i].marks[j] === rastiZemiausiaPazymi (data)){
-                document.write ("<br><em>"+data[i].name+";</em>")
-                break;
-            }
-        }    
+    if (rastiZemiausiaPazymi (data) === 10) {
+    document.write ("<br>Nėra mokinių su žemiausiu pažymiu, visi dešimtukininkai");
     }
+    else {
+        for (let i=0; i<data.length; i=i+1){
+            for (let j=0; j<data[i].marks.length; j=j+1) {
+                if (data[i].marks[j] === rastiZemiausiaPazymi (data)){
+                    document.write ("<br><em>"+data[i].name+";</em>")
+                    break;
+                }
+            }    
+        }
+    }    
 }
 function rastiAuksciausiaPazymi (data) {
     let auksciausiasPazymys = 1;
@@ -134,13 +145,15 @@ function rastiMokiniSuAuksciausiuPazymiuVidurkiu (data) {
 
 function rastiMokiniSuPazymiu8 (data) {
     document.write ("<br>6. Mokinys(-iai) su pažymiu 8:");
+    let mokiniaiBePazymio8
     for (let i=0; i<data.length; i=i+1){
         for (let j=0; j<data[i].marks.length; j=j+1) {
+            let neraMokiniuSuPazymiu8;
             if (data[i].marks[j] === 8){
                 document.write ("<br><em>"+data[i].name+";</em>")
                 break;
             }
-        }    
+        } 
     }
 }
 function rastiMokiniBePazymio7 (data){
