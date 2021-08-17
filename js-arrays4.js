@@ -5,16 +5,7 @@
 // Išspausdinti mokinio vardą, jei jis turi pažymį 8.
 // Išspausdinti mokinio vardą, jei jis neturi pažymio 7.
 // PASTABA: jei kazkurį reikalavimą atitinka daugiau nei vienas mokinys, spausdinti visus.
-document.write ("<h3>Duomenų masyvas IV (bonus masyvas):</h3>const data = [<br>{name: 'Tomas', marks: [1, 1, 1, 1]},<br>{name: 'Ieva', marks: [1, 1, 1]}<br>{name: 'Pranas', marks: [10, 10, 10]},<br>{name: 'Daiva', marks: [10, 10, 10, 10]},<br>]</p><h3>Rezultatai:</h3>");
 
-
-// const data = [
-//     {name: 'Tomas', marks: [10, "2a", 8, 4, 6]},
-//     {name: 'Ieva', marks: [3, 7, 9, true]},
-//     {name: 'Pranas', marks: [7, -7, 7]},
-//     {name: 'Daiva', marks: [Infinity, 9, 8, , 6]},
-//     {name: 'Aurelija', marks: [12, null, 8, 7, 6]},
-// ]
 const data = [
     {name: 'Tomas', marks: [1, 1, 1, 1]},
     {name: 'Ieva', marks: [1, 1, 1]},
@@ -22,15 +13,21 @@ const data = [
     {name: 'Daiva', marks: [10, 10, 10, 10]},
 ]
 function rastiNeteisingusDuomenis (data){
-    document.write ("<br>1. Duomenys teisingi, jei žemiau nenurodyta kitaip.<br><small>(Pvz.:<i>Neteisingi duomenys: </i>Vardas, pažymys;<br>Ištaisykite neteisingus duomenis, kitaip sekančios funkcijos pateiks klaidingus duomenis arba jų nepateiks).</small>")
+    document.write ("<br>1. Pažymių duomenys teisingi, jei žemiau nenurodyta kitaip.<br><small>(Pvz.:<i>Neteisingas pažymys: </i>Mokinio vardas, neteisingas pažymys;)</small>")
+    let isvestiPerspejima
     for (let i=0; i<data.length; i=i+1){
         for (let j=0; j<data[i].marks.length; j=j+1) {
             if (Number.isInteger(data[i].marks[j]) === false || data[i].marks[j]<1 || data[i].marks[j]>10) {
-            document.write ("<br><i>Neteisingi duomenys: </i>"+data[i].name+", "+data[i].marks[j]+";");
+            document.write ("<br><i>Neteisingas pažymys: </i>"+data[i].name+", "+data[i].marks[j]+";");
+            isvestiPerspejima = true;
             }
-        }    
+        }
+    }
+    if (isvestiPerspejima===true){
+        alert ("Tarp nurodytų pažymių yra klaidingų. Ištaisykite juos!")
     }
 }
+
 function rastiZemiausiaPazymi (data) {
     let zemiausiasPazymys = 10;
     for (let i=0; i<data.length; i=i+1){
@@ -44,15 +41,15 @@ function rastiZemiausiaPazymi (data) {
 }
 
 function rastiMokiniSuZemiausiuPazymiu (data){
-    document.write ("<br>2. Mokinys(-iai) su mažiausiu pažymiu "+rastiZemiausiaPazymi (data)+":");
+    document.write ("<br>2. Mokinys(-iai) su mažiausiu pažymiu:");
     for (let i=0; i<data.length; i=i+1){
         for (let j=0; j<data[i].marks.length; j=j+1) {
             if (data[i].marks[j] === rastiZemiausiaPazymi (data)){
-                document.write ("<br><em>"+data[i].name+";</em>")
+                document.write ("<br><em>"+data[i].name+" (mažiausias pažymys "+rastiZemiausiaPazymi (data)+");</em>")
                 break;
             }
         }    
-    }
+    } 
 }
 function rastiAuksciausiaPazymi (data) {
     let auksciausiasPazymys = 1;
@@ -67,11 +64,11 @@ function rastiAuksciausiaPazymi (data) {
 }
 
 function rastiMokiniSuAuksciausiuPazymiu (data){
-    document.write ("<br>3. Mokinys(-iai) su aukščiausiu pažymiu "+rastiAuksciausiaPazymi (data)+":");
+    document.write ("<br>3. Mokinys(-iai) su aukščiausiu pažymiu: "); 
     for (let i=0; i<data.length; i=i+1){
         for (let j=0; j<data[i].marks.length; j=j+1) {
             if (data[i].marks[j] === rastiAuksciausiaPazymi (data)){
-                document.write ("<br><em>"+data[i].name+";</em>")
+                document.write ("<br><em>"+data[i].name+" (aukščiausias pažymys "+rastiAuksciausiaPazymi (data)+");</em>")
                 break;
             }
         }    
